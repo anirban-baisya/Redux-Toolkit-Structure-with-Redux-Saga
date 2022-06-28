@@ -5,7 +5,7 @@ import { callLoginApi } from './../../services/loginApi';
 function* doUserExists({ payload }) {
     // const { query } = payload;
     // console.log(query)
-    if (payload) {
+    if (payload) { //if i have to send any query , or want to send any data then i have to pass the paylod aloso  yield call(callgetAllCategoriesApi,payload)
         try {
             const userExistResponse = yield call(callLoginApi, payload);
             console.log("-=-=-= >>> ", userExistResponse) //after receving response from api we have to call the onUserExistSubmitSuccess(userExistResponse) action 
